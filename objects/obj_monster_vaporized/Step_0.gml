@@ -9,7 +9,7 @@ while (accumulator >= 1 && line < pixels_h) {
 	var chunk_col = undefined, chunk_w = 0;
 	for (var xx = 0; xx < pixels_w; xx++) {
 		var valid = false, separate = false;
-		var pixel = buffer_peek(pixels_buf, (line * pixels_buf_w + xx) * 4, buffer_u32);
+		var pixel = buffer_read(pixels_buf, buffer_u32);
 
 		if ((pixel >> 0x18 & 0xFF) < (0xFF - alpha_tolerance)
 			|| color_get_value(pixel & 0xFFFFFF) < (0xFF - black_tolerance)) {
@@ -39,6 +39,8 @@ while (accumulator >= 1 && line < pixels_h) {
 	}
 	if (chunked_mode && chunk_w > 0)
 		produced_part = !!scr_monster_vaporized_create_particle(pixels_w - chunk_w, chunk_w, chunk_col);
+	if (pixels_buf_w - pixels_w > 0)
+		buffer_seek(pixels_buf, buffer_seek_relative, (pixels_buf_w - pixels_w) * 4);
 
 	line++; accumulator--;
 }

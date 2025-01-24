@@ -26,6 +26,7 @@ if (pixels_buf == undefined && sprite_exists(sprite_index)) {
 	if (pixels_buf == -1)
 		show_error("failed to create buffer to obtain source pixels", false);
 	buffer_get_surface(pixels_buf, pixels_surf, 0);
+	buffer_seek(pixels_buf, buffer_seek_start, 0);
 
 	surface_free(pixels_surf);
 	pixels_surf = -1;

@@ -6,7 +6,7 @@ function scr_monster_vaporized_create_particle(xoff, xscale, color) {
 
 	with (particle) {
 		image_blend = color & 0xFFFFFF; base_blend = image_blend;
-		grayscale_blend = scr_grayscalize(image_blend);
+		grayscale_blend = fade_style == 0 ? $494949 : scr_grayscalize(image_blend);
 
 		image_alpha = (color >> 0x18 & 0xFF) / 0xFF * other.image_alpha;
 		base_alpha = image_alpha;

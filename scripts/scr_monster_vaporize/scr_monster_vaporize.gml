@@ -1,4 +1,4 @@
-function scr_monster_vaporize(in_rate, in_part_speed, in_part_fade_style, in_src_downscale_x, in_src_downscale_y) {
+function scr_monster_vaporize(_rate=4, _part_speed=1, _part_fade_style=0, _src_downscale_x=2, _src_downscale_y=2) {
 	var inst = instance_create_depth(x, y, depth, obj_monster_vaporized);
 
 	with (inst) {
@@ -7,16 +7,16 @@ function scr_monster_vaporize(in_rate, in_part_speed, in_part_fade_style, in_src
 		image_blend = other.image_blend; image_alpha = other.image_alpha;
 		// image_angle = other.image_angle;
 
-		if (!is_undefined(in_rate))
-			rate = in_rate;
-		if (!is_undefined(in_part_speed))
-			part_speed = in_part_speed;
-		if (!is_undefined(in_part_fade_style))
-			part_fade_style = in_part_fade_style;
-		if (!is_undefined(in_src_downscale_x))
-			src_downscale_x = in_src_downscale_x;
-		if (!is_undefined(in_src_downscale_y))
-			src_downscale_y = in_src_downscale_y;
+		if (!is_undefined(_rate))
+			rate = _rate;
+		if (!is_undefined(_part_speed))
+			part_speed = _part_speed;
+		if (!is_undefined(_part_fade_style))
+			part_fade_style = _part_fade_style;
+		if (!is_undefined(_src_downscale_x))
+			src_downscale_x = _src_downscale_x;
+		if (!is_undefined(_src_downscale_y))
+			src_downscale_y = _src_downscale_y;
 	}
 
 	return inst;

@@ -24,3 +24,5 @@ pixels_w = -1; pixels_h = -1;
 pixels_buf_w = -1;
 
 line = 0; accumulator = 0;
+
+last_time = current_time;

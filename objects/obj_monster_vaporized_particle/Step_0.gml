@@ -8,8 +8,8 @@ if (fade_speed <= 0)
 
 /*phy_accum += phy_rate;
 while (phy_accum >= 1) {*/
-_hspeed += cos(degtorad(-_gravity_direction)) * _gravity * phy_rate;
-_vspeed += sin(degtorad(-_gravity_direction)) * _gravity * phy_rate;
+_hspeed += cos(degtorad(_gravity_direction)) * _gravity * phy_rate;
+_vspeed -= sin(degtorad(_gravity_direction)) * _gravity * phy_rate;
 x += _hspeed * phy_rate; y += _vspeed * phy_rate;
 /*	phy_accum--;
 }*/

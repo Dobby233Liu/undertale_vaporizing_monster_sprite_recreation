@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_test_vaporizer",
   "spriteId": {
-    "name": "spr_test_vaporizer_asg",
-    "path": "sprites/spr_test_vaporizer_asg/spr_test_vaporizer_asg.yy",
+    "name": "spr_test_vaporizer_large",
+    "path": "sprites/spr_test_vaporizer_large/spr_test_vaporizer_large.yy",
   },
   "solid": false,
   "visible": true,
